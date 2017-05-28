@@ -46,7 +46,6 @@ public class ViewController extends Application
     	app.setPrefSize(WIDTH, HEIGHT);
     	for (int i = 0 ; i < 10; i++){
     		for (int j = 0; j < 10; j++){
-    	
     			playGround.boxes[i][j].setTranslateX(i*50);
     			playGround.boxes[i][j].setTranslateY(j*50);
     			app.getChildren().addAll(playGround.boxes[i][j]);
@@ -56,6 +55,8 @@ public class ViewController extends Application
     	
     	return app;
     }
+    
+   
     
     private void updatePlayGround(){
     	for (int i = 0 ; i < 10; i++){
@@ -127,6 +128,7 @@ public class ViewController extends Application
             	playGround.lepes = 0;
             	playGround.celban = 0;
             	playGround.getDatum(); 
+
             	playGround.resetPlayGround();
             	
                 updatePlayGround();
@@ -249,6 +251,7 @@ public class ViewController extends Application
 					}
 				}
 		});
+		
 		
         app.getChildren().add(setRightBlock());
         app.getChildren().addAll(setWelcomeScreen());
