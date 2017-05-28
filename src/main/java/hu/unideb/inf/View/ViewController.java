@@ -1,10 +1,6 @@
 package hu.unideb.inf.View;
 
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
-import com.sun.prism.paint.Color;
 
 import hu.unideb.inf.Controller.BoxTypeColor;
 import hu.unideb.inf.Controller.Direction;
@@ -15,7 +11,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
@@ -28,7 +23,6 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -74,7 +68,7 @@ public class ViewController extends Application
     		app.getChildren().addAll(setEndingScreen());
 			setEndingScreen();
 			playGround.nyertes = 1;
-			System.out.println("Nyertél most nem fogsz tudni mozogni.");
+
 		} 
     }
     
@@ -132,7 +126,7 @@ public class ViewController extends Application
             @Override public void handle(ActionEvent e) {
             	playGround.lepes = 0;
             	playGround.celban = 0;
-            	
+            	playGround.getDatum(); 
             	playGround.resetPlayGround();
             	
                 updatePlayGround();
@@ -140,9 +134,8 @@ public class ViewController extends Application
                 playGround.nyertes = 0;
                 playGround.kezdes = 1;
                 
-                System.out.println(playGround.kezdes);
                 
-                playGround.getDatum();                 
+                             
             }
         });
         
@@ -229,7 +222,6 @@ public class ViewController extends Application
 		Scene scene = new Scene(initGround());
 		scene.setOnKeyPressed(event -> {
 				if (event.getCode() == KeyCode.UP){
-					System.out.println("Ujrakezdés után");
 					if(playGround.nyertes != 1 && playGround.kezdes == 1){
 					playGround.Move(Direction.UP);
 					updatePlayGround();
