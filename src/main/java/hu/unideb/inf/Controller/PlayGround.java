@@ -15,11 +15,13 @@ public class PlayGround {
 	public int nyertes = 0;
 	public int kezdes = 0;
 	
+	
 	public LocalDateTime datum = LocalDateTime.now();
 		
 	private static final int SIZE = 10;
 	
 	public Box[][] boxes = new Box[SIZE][SIZE];
+	
 	
 	public Box[][] getBoxes() {
 		return boxes;
@@ -37,6 +39,15 @@ public class PlayGround {
 		return datum;
 	}
 
+	public int getCelban() {
+		return celban;
+	}
+
+	public void setCelban(int celban) {
+		this.celban = celban;
+	}
+	
+	
 	public void resetPlayGround(){
 		for(int i = 0; i < 10; i++){
 			for(int j = 0; j < 10; j++){
@@ -44,7 +55,6 @@ public class PlayGround {
 			}
 		}
 		initPlayGround();
-		
 	}
 	
 	public PlayGround() {
@@ -55,8 +65,9 @@ public class PlayGround {
 		}
 		
 		initPlayGround();
+
 	}
-	
+
 	public void initPlayGround(){
 		
 		for (int i = 0; i < SIZE; i++) {
