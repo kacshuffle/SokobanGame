@@ -36,7 +36,7 @@ public class PlaygroundTest {
 				assertEquals("Box keret-e", BoxTypes.KERET, playground.boxes[0][i].getType());
 				assertEquals("Box keret-e", BoxTypes.KERET, playground.boxes[playground.getBoxes().length-1][i].getType());
 				assertEquals("Box keret-e", BoxTypes.KERET, playground.boxes[i][playground.getBoxes().length-1].getType());
-			}
+			} 
 				assertEquals("A box Játékos", BoxTypes.JATEKOS, playground.boxes[1][1].getType());
 				
 				assertEquals("A box Doboz", BoxTypes.DOBOZ, playground.boxes[4][2].getType());

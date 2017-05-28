@@ -132,8 +132,16 @@ public class ViewController extends Application
             @Override public void handle(ActionEvent e) {
             	playGround.lepes = 0;
             	playGround.celban = 0;
+            	
             	playGround.resetPlayGround();
+            	
                 updatePlayGround();
+                
+                playGround.nyertes = 0;
+                playGround.kezdes = 1;
+                
+                System.out.println(playGround.kezdes);
+                
                 playGround.getDatum();                 
             }
         });
@@ -221,6 +229,7 @@ public class ViewController extends Application
 		Scene scene = new Scene(initGround());
 		scene.setOnKeyPressed(event -> {
 				if (event.getCode() == KeyCode.UP){
+					System.out.println("Ujrakezdés után");
 					if(playGround.nyertes != 1 && playGround.kezdes == 1){
 					playGround.Move(Direction.UP);
 					updatePlayGround();

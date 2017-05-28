@@ -107,14 +107,14 @@ public class PlayGround {
 					
 					boxes[x][y-1].setType(boxes[x][y].getType());
 					boxes[x][y].setType(BoxTypes.ALAPTERULET);
-				}else if(boxes[x][y-1].getType() == BoxTypes.KESZCEL){
-					System.out.println("Kész címet nem lehet elmozdítani!");
+				}else if(boxes[x][y-1].getType() == BoxTypes.KESZCEL || boxes[x][y-1].getType() == BoxTypes.CELTERULET){
+
 				}else if(boxes[x][y-1].getType() == BoxTypes.DOBOZ && boxes[x][y-2].getType() == BoxTypes.KESZCEL){
-					System.out.println("Dobozt egy kész címre már nem lehet tolni");
+
 				}else if (boxes[x][y-1].getType() == BoxTypes.DOBOZ && boxes[x][y-2].getType() == BoxTypes.KERET){
-					System.out.println("A tégla falat nem tudod lebontani!");
+
 				}else if (boxes[x][y-1].getType() == BoxTypes.DOBOZ && boxes[x][y-2].getType() == BoxTypes.DOBOZ){
-					System.out.println("2 Dobozt egyszerre nem tudsz eltolni.");
+
 				} else{
 					if (boxes[x][y-1].getType() == BoxTypes.DOBOZ && boxes[x][y-2].getType() != BoxTypes.KERET){
 						boxes[x][y-2].setType(boxes[x][y-1].getType());
@@ -126,8 +126,6 @@ public class PlayGround {
 					}
 				}
 				lepes++;
-				System.out.println("Lépések száma: " + lepes);
-				System.out.println("Célban lévő dobozok száma: " + celban);
 			}
 		}
 		
@@ -140,14 +138,14 @@ public class PlayGround {
 					
 					boxes[x][y+1].setType(boxes[x][y].getType());
 					boxes[x][y].setType(BoxTypes.ALAPTERULET);
-				}else if(boxes[x][y+1].getType() == BoxTypes.KESZCEL){
-					System.out.println("Kész címet nem lehet mozdítani!");
+				}else if(boxes[x][y+1].getType() == BoxTypes.KESZCEL || boxes[x][y+1].getType() == BoxTypes.CELTERULET){
+
 				}else if(boxes[x][y+1].getType() == BoxTypes.DOBOZ && boxes[x][y+2].getType() == BoxTypes.KESZCEL){
-					System.out.println("Dobozt egy kész címre már nem lehet tolni!");
+
 				}else if(boxes[x][y+1].getType() == BoxTypes.DOBOZ && boxes[x][y+2].getType() == BoxTypes.KERET){
-					System.out.println("A tégla falat nem tudod lebontani!");
+
 				}else if (boxes[x][y+1].getType() == BoxTypes.DOBOZ && boxes[x][y+2].getType() == BoxTypes.DOBOZ){
-					System.out.println("2 Dobozt egyszerre nem tudsz eltolni.");
+
 				} else{
 					if (boxes[x][y+1].getType() == BoxTypes.DOBOZ && boxes[x][y+2].getType() != BoxTypes.KERET){
 						boxes[x][y+2].setType(boxes[x][y+1].getType());
@@ -159,8 +157,7 @@ public class PlayGround {
 					}
 				}
 				lepes++;
-				System.out.println("Lépések száma: " + lepes);
-				System.out.println("Célban lévő dobozok száma: " + celban);
+
 			}
 		}
 		
@@ -173,14 +170,14 @@ public class PlayGround {
 					
 					boxes[x-1][y].setType(boxes[x][y].getType());
 					boxes[x][y].setType(BoxTypes.ALAPTERULET);
-				}else if(boxes[x-1][y].getType() == BoxTypes.KESZCEL){
-					System.out.println("Kész címet már nem lehet eltolni!");
+				}else if(boxes[x-1][y].getType() == BoxTypes.KESZCEL || boxes[x-1][y].getType() == BoxTypes.CELTERULET){
+
 				}else if(boxes[x-1][y].getType() == BoxTypes.DOBOZ && boxes[x-2][y].getType() == BoxTypes.KESZCEL){
-					System.out.println("Dobozt egy kész címre már nem lehet tolni!");
+
 				}else if(boxes[x-1][y].getType() == BoxTypes.DOBOZ && boxes[x-2][y].getType() == BoxTypes.KERET){
-					System.out.println("A tégla falat nem tudod lebontani!");
+
 				}else if (boxes[x-1][y].getType() == BoxTypes.DOBOZ && boxes[x-2][y].getType() == BoxTypes.DOBOZ){
-					System.out.println("2 Dobozt egyszerre nem tudsz eltolni.");
+
 				} else {
 					if (boxes[x-1][y].getType() == BoxTypes.DOBOZ && boxes[x-2][y].getType() != BoxTypes.KERET){
 						boxes[x-2][y].setType(boxes[x-1][y].getType());
@@ -192,28 +189,27 @@ public class PlayGround {
 					}
 				}
 				lepes++;
-				System.out.println("Lépések száma: " + lepes);
-				System.out.println("Célban lévő dobozok száma: " + celban);
+				
 			}
 		}
 		
 		if(dir == Direction.RIGHT){
 			BoxTypes type = boxes[x+1][y].getType();
-			if(boxes[x+1][y].getType() != BoxTypes.KERET){ //Ha egyel jobbra lévő nem Keret
+			if(boxes[x+1][y].getType() != BoxTypes.KERET){
 				if(boxes[x+1][y].getType() == BoxTypes.DOBOZ && boxes[x+2][y].getType() == BoxTypes.CELTERULET){
 					boxes[x+2][y].setType(BoxTypes.KESZCEL);
 					celban++;
 					
 					boxes[x+1][y].setType(boxes[x][y].getType());
 					boxes[x][y].setType(BoxTypes.ALAPTERULET);
-				}else if(boxes[x+1][y].getType() == BoxTypes.KESZCEL){
-					System.out.println("Kész címet nem lehet eltolni!");
+				}else if(boxes[x+1][y].getType() == BoxTypes.KESZCEL || boxes[x+1][y].getType() == BoxTypes.CELTERULET){
+
 				}else if(boxes[x+1][y].getType() == BoxTypes.DOBOZ && boxes[x+2][y].getType() == BoxTypes.KESZCEL){
-					System.out.println("Dobozt egy kész címre nem lehet tolni!");
+
 				}else if(boxes[x+1][y].getType() == BoxTypes.DOBOZ && boxes[x+2][y].getType() == BoxTypes.KERET){
-					System.out.println("A tégla falat nem tudod lebontani!");
+
 				}else if (boxes[x+1][y].getType() == BoxTypes.DOBOZ && boxes[x+2][y].getType() == BoxTypes.DOBOZ){
-					System.out.println("2 Dobozt egyszerre nem tudsz eltolni.");
+
 				} else {
 					if (boxes[x+1][y].getType() == BoxTypes.DOBOZ && boxes[x+2][y].getType() != BoxTypes.KERET){
 						boxes[x+2][y].setType(boxes[x+1][y].getType());
@@ -225,8 +221,7 @@ public class PlayGround {
 					}
 				}
 				lepes++;
-				System.out.println("Lépések száma: " + lepes);
-				System.out.println("Célban lévő dobozok száma: " + celban);
+
 			}
 		}
 		
