@@ -16,17 +16,6 @@ public class PlaygroundTest {
 	public void initGround() {
 		playground = new PlayGround();
 	}
-	
-	/*@Test
-	public void playGroundTest() {
-		for (int i = 1; i < playground.getBoxes().length -1; i++) {
-			for (int j = 1; j < playground.getBoxes()[i].length -1; j++) {
-				//assertEquals("Nem minden Box alapterulet", BoxTypes.ALAPTERULET, playground.boxes[i][j].getType());
-				assertNotEquals(BoxTypes.ALAPTERULET, playground.boxes[i][j].getType());
-				
-			}
-		}
-	}*/
 		
 	@Test
 	public void GroundTest(){
@@ -51,12 +40,12 @@ public class PlaygroundTest {
 		}
 	}
 	
-	@Test
+	/*@Test
 	public void WinnerTest(){
 		if(playground.celban == 3){
 			assertTrue(playground.celban == 3);
 		} else {
 			assertTrue(playground.celban == 0);
 		}
-	}
+	}*/
 }
